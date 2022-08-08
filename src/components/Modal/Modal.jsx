@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import { Overlay, Modal } from './Modal.styled';
 
@@ -8,7 +8,7 @@ const modalRoot = document.querySelector('#modal-root');
 const ModalView = ({ changeURL, onClose, findCurrentIndex, largeImageURL }) => {
   const firstRender = useRef(true);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (firstRender.current) {
       firstRender.current = false;
       return;

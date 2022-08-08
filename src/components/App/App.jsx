@@ -6,7 +6,7 @@ import { Loading, LoadingContainer, ContainerLoadMore } from './App.styled';
 import LoadButton from 'components/LoadButton/LoadButton';
 import ModalView from 'components/Modal/Modal';
 import Notiflix from 'notiflix';
-import { useState, useEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -16,7 +16,7 @@ const App = () => {
   const [index, setIndex] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (currentQuery === '') {
       return;
     }
