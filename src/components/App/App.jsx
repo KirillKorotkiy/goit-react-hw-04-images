@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React from 'react';
 import Searchbar from '../Searchbar/Searchbar';
 import searchAPI from '../Servises/SearchApi';
@@ -23,6 +22,7 @@ const App = () => {
     }
     setSearchResult([]);
     handleSearch();
+    // eslint-disable-next-line
   }, [currentQuery]);
 
   const handleSearch = async () => {
