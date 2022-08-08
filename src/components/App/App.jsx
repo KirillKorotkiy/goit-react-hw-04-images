@@ -45,7 +45,7 @@ const App = () => {
 
   const toggleModal = () => {
     setLargeImageURL('');
-    setIndex('');
+    setIndex('')
   };
 
   const getLargeImg = img => {
