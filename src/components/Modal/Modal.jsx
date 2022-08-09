@@ -6,7 +6,6 @@ import { Overlay, Modal } from './Modal.styled';
 const modalRoot = document.querySelector('#modal-root');
 
 const ModalView = ({ changeURL, onClose, findCurrentIndex, largeImageURL }) => {
-
   useEffect(() => {
     window.addEventListener('keyup', onKeyUp);
     findCurrentIndex();
@@ -14,8 +13,7 @@ const ModalView = ({ changeURL, onClose, findCurrentIndex, largeImageURL }) => {
       window.removeEventListener('keyup', onKeyUp);
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [changeURL]);
-
+  }, [changeURL]);  
 
   const onKeyUp = event => {
     if (event.code === 'ArrowLeft') {

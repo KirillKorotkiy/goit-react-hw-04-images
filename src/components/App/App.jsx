@@ -6,7 +6,8 @@ import { Loading, LoadingContainer, ContainerLoadMore } from './App.styled';
 import LoadButton from 'components/LoadButton/LoadButton';
 import ModalView from 'components/Modal/Modal';
 import Notiflix from 'notiflix';
-import { useState, useLayoutEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useCallback } from 'react';
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -16,7 +17,7 @@ const App = () => {
   const [index, setIndex] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (currentQuery === '') {
       return;
     }
@@ -52,12 +53,12 @@ const App = () => {
     setLargeImageURL(img);
   };
 
-  const findCurrentIndex = () => {
+  const findCurrentIndex = useCallback(() => {
     const index = searchResult
       .map(el => el.largeImageURL)
       .indexOf(largeImageURL);
     setIndex(index);
-  };
+  }, [largeImageURL, searchResult])
 
   const changeURL = value => {
     setIndex(prevIndex => prevIndex + value);    
