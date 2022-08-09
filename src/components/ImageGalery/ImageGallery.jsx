@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { memo } from 'react';
 import ImageGalleryItem from 'components/ImageGaleryItem/ImageGalleryItem';
 import { ImgGallaryList, ContainerList } from './ImageGallery.styled';
 
-export default function ImageGallery({ items,  getLargeImg }) {
+function ImageGallery({ items,  getLargeImg }) {
+  console.log('image')
   return (
     <ContainerList>
     <ImgGallaryList>
@@ -13,3 +14,5 @@ export default function ImageGallery({ items,  getLargeImg }) {
     </ContainerList>
   );
 }
+
+export default memo(ImageGallery)

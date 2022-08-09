@@ -39,25 +39,26 @@ const App = () => {
     }
   };
 
-  const onSubmitHandler = currentQuery => {
+  const onSubmitHandler = useCallback((currentQuery) => {
     setCurrentQuery(currentQuery);
     setCurrentPage(1);
-  };
+  },[])
+
 
   const toggleModal = () => {
     setLargeImageURL('');
     setIndex('')
   };
 
-  const getLargeImg = img => {
+  const getLargeImg = useCallback((img) => {
     setLargeImageURL(img);
-  };
+  }, [])
 
   const findCurrentIndex = useCallback(() => {
     const index = searchResult
       .map(el => el.largeImageURL)
       .indexOf(largeImageURL);
-    setIndex(index);
+   return setIndex(index);
   }, [largeImageURL, searchResult])
 
   const changeURL = value => {

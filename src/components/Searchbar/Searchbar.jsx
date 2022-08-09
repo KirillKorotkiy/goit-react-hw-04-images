@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { memo } from 'react';
 import {
   SearchFormBtn,
   SearchForm,
@@ -32,4 +32,4 @@ const Searchbar = ({ onSubmit }) => {
   );
 };
 
-export default Searchbar;
+export default  memo(Searchbar);
