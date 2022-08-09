@@ -54,12 +54,12 @@ const App = () => {
     setLargeImageURL(img);
   }, [])
 
-  const findCurrentIndex = useCallback(() => {
+  const findCurrentIndex = () => {
     const index = searchResult
       .map(el => el.largeImageURL)
       .indexOf(largeImageURL);
    return setIndex(index);
-  }, [largeImageURL, searchResult])
+  }
 
   const changeURL = value => {
     setIndex(prevIndex => prevIndex + value);    
